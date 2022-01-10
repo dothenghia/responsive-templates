@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./grid.css">
+</head>
+
+<style>
+
+    .item {
+        background-color: orange;
+        text-align: center;
+        margin-top: 12px;
+        font-size: 40px;
+        color: #fff;
+        min-height: 200px;
+        line-height: 200px;
+    }
+    .small-item {
+        background-color: rgb(235, 87, 43);
+        text-align: center;
+        margin-top: 12px;
+        font-size: 20px;
+        color: #fff;
+        min-height: 100px;
+        line-height: 100px;
+    }
+    .main {
+        display: flex;
+        padding: 0 32px;
+    }
+    .sidebar {
+        width: 300px;
+        background-color: coral;
+    }
+    .content {
+        flex : 1;
+    }
+
+    @media (max-width : 1023px) {
+        .hide-on-tablet,
+        .hide-on-mobile {
+            display: none;
+        }
+    }
+
+
+
+
+    
+</style>
+
+<!--    Column : .col
+        Prefix :
+          - c : mobile
+          - m : tablet
+          - l : PC  -->
+
+<body style="height: 3000px;">
+    <div class="grid container wide">
+
+        <h1>Layout 1</h1>
+        <div class="row">
+            <!-- .col.l-3*4>.item{GAME $} -->
+            <div class="col l-3 m-6 c-12">
+                <div class="item">GAME 1</div>
+            </div>
+            <div class="col l-3 m-6 c-12">
+                <div class="item">GAME 2</div>
+            </div>
+            <div class="col l-3 m-6 c-12">
+                <div class="item">GAME 3</div>
+            </div>
+            <div class="col l-3 m-6 c-12">
+                <div class="item">GAME 4</div>
+            </div>
+
+        </div>
+
+        <h1>Layout 2</h1>
+        <div class="row">
+            <div class="col l-5 m-5 c-12">
+                <div class="item">
+                    IMAGE
+                    <div class="row" >
+                        <div class="col l-3 m-4 c-3">
+                            <div class="small-item">Thumb 1</div>
+                        </div>
+                        <div class="col l-3 m-4 c-3">
+                            <div class="small-item">Thumb 2</div>
+                        </div>
+                        <div class="col l-3 m-4 c-3">
+                            <div class="small-item">Thumb 3</div>
+                        </div>
+                        <div class="col l-3 m-0 c-3">
+                            <div class="small-item">Thumb 4</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col l-7 m-7 c-12">
+                <div class="item">INFO</div>
+            </div>
+        </div>
+
+
+        <!-- Shopee trang chủ (PC) , săn flash sale (mobile) -->
+        <h1>Layout 3</h1>
+        <div class="row">
+            <div class="col l-2 m-0 c-0">
+                <div class="item">Category</div>
+            </div>
+
+            <div class="col l-10 m-12">
+                <div class="products">
+                    <div class="row">
+                        <div class="col l-2-4 m-4 c-6">
+                            <div class="item">Product 1</div>
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
+                            <div class="item">Product 2</div>
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
+                            <div class="item">Product 3</div>
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
+                            <div class="item">Product 4</div>
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
+                            <div class="item">Product 5</div>
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
+                            <div class="item">Product 6</div>
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
+                            <div class="item">Product 7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+    </div>
+
+
+    <h1>Layout 4 (Collect UI)</h1>
+    <div class="main">
+        <div class="sidebar hide-on-tablet hide-on-mobile">
+            <h1>STABLE SIDEBAR</h1>
+
+        </div>
+
+        <div class="content">
+            <h1>Content bla bla bla,...</h1>
+            <div class="grid">
+                <div class="row">
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 1</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 2</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 3</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 4</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 5</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 6</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 1</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 2</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 3</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 4</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 5</div>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <div class="item">Item 6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <h1>Navbar</h1>
+
+</body>
+</html>
