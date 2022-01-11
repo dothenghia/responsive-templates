@@ -23,7 +23,7 @@
         background-color: rgb(235, 87, 43);
         text-align: center;
         margin-top: 12px;
-        font-size: 20px;
+        font-size: 14px;
         color: #fff;
         min-height: 100px;
         line-height: 100px;
@@ -47,6 +47,173 @@
         }
     }
 
+    /* ************ Navbar ************ */
+    .main--2 {
+    width: 1200px;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        background-color: #333;
+    }
+
+    .nav__list {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav__link {
+        text-decoration: none;
+        color: #fff;
+        margin-left: 18px;
+    }
+
+
+    /* Mobile nav bar */
+    .nav__bars-btn {
+        width: 20px;
+        height: 20px;
+        display: none;
+        color: #fff;
+        margin-left: 12px;
+
+    }
+    .nav__overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: none;
+        animation: fadeIn linear 0.25s;
+    }
+
+    .nav__mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 320px;
+        max-width: 100%;
+        background-color: orange;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all linear 0.25s; 
+    }
+    .nav__mobile-list {
+        margin-top: 24px;
+
+    }
+    .nav__mobile-link {
+        text-decoration: none;
+        color: #000;
+        padding: 8px 0 8px 24px;
+        display: block;
+        font-size: 1.4rem;
+    }
+    .nav__mobile-close {
+        color: orangered;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+    }
+    .nav__input {
+        display: none;
+    }
+    .nav__input:checked ~ .nav__overlay {
+        display: block;
+    }
+    .nav__input:checked ~ .nav__mobile {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    @media (max-width : 1023px) {
+        .nav__bars-btn {
+            display: block;
+        }
+        .nav__pc {
+            display: none;
+        }
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    /* ********** Modal ********** */
+    .main--3 {
+    width: 1200px;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    }
+    .modal-btn {
+        margin-top: 12px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: paleturquoise;
+        text-decoration: none;
+
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity linear 0.2s;
+    }
+    .modal:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .modal-overlay {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .modal-overlay-close {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        cursor: default;
+    }
+    .modal-body {
+        max-width: 400px;
+        position: relative;
+        padding: 16px;
+        background-color: orange;
+    }
+    .modal-close-btn {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        text-decoration: none;
+        color: saddlebrown;
+        font-size: 26px;
+    }
 
 
 
@@ -204,6 +371,87 @@
 
 
     <h1>Navbar</h1>
+    <div class="main--2">
+        <div class="nav">
+            <!-- Nav PC -->
+            <nav class="nav__pc">
+                <ul class="nav__list">
+                    <li>
+                        <a href="" class="nav__link">Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__link">About</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__link">Category</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__link">News</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+
+
+            <label for="nav-mobile-input" class="nav__bars-btn">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+            </label>
+
+            <input type="checkbox" name="" class="nav__input" id="nav-mobile-input">
+
+            <label class="nav__overlay" for="nav-mobile-input"></label>
+
+            <nav class="nav__mobile" id="nav__mobile">
+                <label class="nav__mobile-close" for="nav-mobile-input">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                </label>
+                <ul class="nav__mobile-list">
+                    <li>
+                        <a href="" class="nav__mobile-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__mobile-link">About</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__mobile-link">Category</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__mobile-link">News</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__mobile-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+
+        <article>
+            <h1>Hơn 100 học sinh biết bơi nhờ lớp dạy bơi miễn phí của những thanh niên tốt bụng</h1>
+            <p><strong>Hai năm nay, hai thanh niên ở xã Chư Đăng Ya, huyện Chư Pah (Gia Lai) cùng với một số thanh niên khác của xã đã tự nguyện dạy bơi cho những học sinh bản địa. Nhờ có lớp học bơi này, hơn 100 học sinh ở xã đã biết bơi, có thêm kỹ năng sinh tồn ở vùng đất thường có nước dữ vào mùa mưa.</strong></p>
+            <p>Câu chuyện về hành động đẹp của chị Lê Thị Mai (33 tuổi, người phụ nữ bán vé số tại TP.Đồng Xoài, Bình Phước) nhặt được số tiền hơn 100 triệu đồng cùng nhiều lắc, vòng, dây chuyền bằng vàng và trả lại cho người đánh rơi vào chiều ngày 28.10.2019 vẫn đang được nhiều người nhắc đến như một hành động đẹp, một bông hoa việc tốt giữa đời thường.</p>
+        </article>
+    </div>
+
+    <h1>Modal (bi loi nhay trang, nen dung JS)</h1>
+    <div class="main--3">
+        <a href="#my-modal" class="modal-btn">CLick me hehe</a>
+
+        <div class="modal modal-overlay" id="my-modal">
+            <a href="#" class="modal-overlay-close"></a>
+
+            <div class="modal-body">
+                <a href="#" class="modal-close-btn">&times;</a>
+                <h3>Modal heading Modal heading Modal heading Modal heading</h3>
+                <p>Modal info ....</p>
+                <p>Modal info ....Modal info ....Modal info ....Modal info ....Modal info ....Modal info ....</p>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
